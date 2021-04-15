@@ -3,7 +3,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px dotted red;
 }
 
 body, html {
@@ -55,23 +54,29 @@ main {
 }
 
 main .main-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border: 1px solid green;
-  height: 80vh;
+  height: 90vh;
+}
+
+main .main-page .main-left {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main .main-page .main-left .code-text {
   color: #ff8484;
   font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 
 main .main-page .main-left h1 {
   width: 30%;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin: 0;
 }
 
@@ -80,7 +85,7 @@ main .main-page .main-left .main-design {
 }
 
 main .main-page .main-left .description {
-  font-size: 1rem;
+  font-size: 4.8vw;
   font-weight: 300;
 }
 
@@ -91,11 +96,12 @@ main .main-page .main-left .download-resume {
   background-color: #324a5f;
   border-radius: 100px;
   border: none;
-  font-size: 1.3rem;
+  font-size: 5vw;
+  font-family: 'Poppins', sans-serif, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 2rem auto;
+  margin: 1rem auto;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -109,16 +115,25 @@ main .main-page .main-left .download-resume .download-icon {
 
 main .main-page .main-left .call-to-action {
   text-align: center;
-  bottom: 10%;
 }
 
 main .main-page .main-left .call-to-action p {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 7vw;
+  font-weight: 600;
   text-transform: uppercase;
   color: #ff8484;
-  margin: 0;
-  top: 10rem;
+  margin: 2rem auto 0 auto;
+}
+
+main .main-page .main-left .call-to-action .down-arrow {
+  margin-top: .5rem;
+  width: 40px;
+}
+
+main .main-page .main-right {
+  display: inline;
+  position: absolute;
+  right: 2rem;
 }
 
 main .main-page .main-right .main-graphic {
@@ -126,8 +141,6 @@ main .main-page .main-right .main-graphic {
 }
 
 main .main-page .main-right .socials {
-  position: absolute;
-  left: 78vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,7 +151,7 @@ main .main-page .main-right .socials {
 }
 
 main .main-page .main-right .socials .social-icon {
-  width: 50px;
+  width: 13vw;
 }
 
 img {
