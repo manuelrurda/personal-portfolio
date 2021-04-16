@@ -1,16 +1,18 @@
 *{
     box-sizing: border-box;
-   //border: 1px dotted red;
+    //border: 1px dotted red;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 $white: #efefef;
-$blue-ligh: #324a5f;
+$blue-ligh: #243856;
 $blue-mid: #1b2a41;
 $blue-dark: #162233;
 $pink: #ff8484;
+
+$padding-sides: 1.7rem;
 
 body, html{
     font-family: 'Poppins', sans-serif, Arial, sans-serif;
@@ -20,6 +22,8 @@ body, html{
 }
 
 header{
+
+    position: sticky;
     background-color: $blue-dark;
     width: 100%;
     height: 5rem;
@@ -40,45 +44,50 @@ header{
         a{
             text-decoration: none;
             color: $white;
-            padding: .2em;
+            padding: .2em 1.5vw;
         }
     }
 }
 
+.code-text{
+    color: $pink;
+    font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+}
+
 main{
-    margin: 0.4rem;
-    padding: 1rem 1.3rem;
+    margin: 0;
+    padding: 0;
 
     .main-page{
         //border: 1px solid green;
-        height: 90vh;
+        padding:  1.4rem $padding-sides 0 $padding-sides;
+        height: auto;
 
         .main-left{
             display: inline-flex;
             flex-direction: column;
-            .code-text{
-                color: $pink;
-                font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
-                font-size: 1.5rem;
+            .intro{
                 margin: 0;
+                font-size: 1.5rem;
             }
-        
+            
             h1{
                 width: 30%;
                 font-size: 2.5rem;
                 margin: 0;
             }
         
+            .description{
+                line-height: 1.7rem;
+                font-size: 1.1rem;
+                font-weight: 300;
+                text-align: justify;
+            }
+            
             .main-design{
                 display: none;
             }
 
-            .description{
-
-                font-size: 4.8vw;
-                font-weight: 300;
-            }
-    
             .download-resume{
                 align-items: center;
                 background-color: $blue-ligh;
@@ -86,6 +95,7 @@ main{
                 border: none;
                 font-size: 5vw;
                 font-family: 'Poppins', sans-serif, Arial, sans-serif;
+                font-weight: 500;
                 display: flex;
                 margin: 1rem auto;
                 justify-content: space-evenly;
@@ -93,7 +103,7 @@ main{
                 width: 45vw;
     
                 .download-icon{
-                    width: 30%;
+                    width: 27%;
                 }
             }
 
@@ -133,6 +143,91 @@ main{
             }
         }
     }
+
+    .featured-projects{
+        border: 1px solid green;
+        position: relative;
+        bottom: 4rem;
+
+        .featured{
+            width: 50%;
+            min-width: 200px;
+            position: relative;
+            top: 4rem;
+        }
+        .projects{
+            .light-bg{
+
+                background-color: $blue-ligh;
+            }
+            .project{
+                padding: 1rem $padding-sides;
+                overflow-x: hidden;
+
+                .left{
+
+                    h3{
+                        font-size: 2rem;
+                    }
+
+                    p{
+                        font-size: 1rem;
+                        font-weight: 400;
+                        line-height: 1.7rem;
+                        text-align: justify;
+                    }
+
+                    ul{
+                        padding: 0;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+
+                        li{
+                            font-size: 1rem;
+                            padding: .2rem 1rem;
+                            margin: .3rem;
+                            list-style: none;
+                            background-color: $blue-dark;
+                            border-radius: 100px;
+                        }
+                    }
+
+                }
+
+                .right{
+                    .project-sc{
+                        width: 100vw;
+                        border-radius: 20px;
+                    }
+                    .view-buttons{
+                        display: flex;
+                        justify-content: space-evenly;
+                        width: 40%;
+                        height: 20vw;
+                        background-color: $blue-dark;
+                        border-radius: 100px 0 0 100px;
+                        .icon{
+                            fill: $white;
+                            width: 40px;
+                            padding: .5rem;
+                        }
+                    }
+                }
+            }
+            .first{
+                padding-top: 1.7rem;
+            }
+        }
+    }
+}
+
+.section-text{
+    padding: .5rem .5rem .5rem 1rem;
+    background-color: $blue-dark;
+    font-size: 1.65rem;
+    text-transform: uppercase;
+    border-radius: 0 100px 100px 0;
 }
 
 img{
