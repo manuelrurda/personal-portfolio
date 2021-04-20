@@ -17,7 +17,6 @@ header {
   position: sticky;
   background-color: #212529;
   width: 100%;
-  height: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,12 +44,20 @@ header nav a {
   font-size: clamp(0.5rem, 4vw, 1.4rem);
   text-decoration: none;
   color: #efefef;
-  padding: .2em 1.5vw;
+  padding: 0 1.5vw;
 }
 
 .code-text {
   color: #ff8484;
   font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+}
+
+.section-text {
+  margin: 0;
+  font-size: clamp(1rem, 7vw, 2rem);
+  text-align: left;
+  text-transform: uppercase;
+  padding: 1rem 1.7rem;
 }
 
 main {
@@ -59,8 +66,7 @@ main {
 }
 
 main .main-page {
-  padding: 1.4rem 1.7rem 0 1.7rem;
-  height: auto;
+  padding: 1.4rem 1.7rem 1.4rem 1.7rem;
 }
 
 main .main-page .main-left {
@@ -80,7 +86,7 @@ main .main-page .main-left .intro {
 
 main .main-page .main-left h1 {
   width: 50%;
-  font-size: clamp(2rem, 11.5vw, 3.5rem);
+  font-size: clamp(2rem, 11.5vw, 3.3rem);
   margin: 0;
 }
 
@@ -114,6 +120,7 @@ main .main-page .main-left .download-resume {
 }
 
 main .main-page .main-left .download-resume p {
+  height: auto;
   font-size: clamp(1rem, 5vw, 1.5rem);
   font-family: 'Poppins', sans-serif, Arial, sans-serif;
   font-weight: 500;
@@ -129,7 +136,7 @@ main .main-page .main-left .call-to-action {
 }
 
 main .main-page .main-left .call-to-action p {
-  font-size: clamp(1rem, 7vw, 2.5rem);
+  font-size: clamp(1rem, 7vw, 2.2rem);
   font-weight: 600;
   text-transform: uppercase;
   color: #ff8484;
@@ -167,12 +174,13 @@ main .main-page .main-right .socials .social-icon {
 
 main .featured-projects {
   background-color: #495057;
-  margin-top: 1rem;
+  padding-top: 1.5rem;
 }
 
-main .featured-projects .featured {
-  width: clamp(200px, 35vw, 270px);
-  text-align: center;
+main .featured-projects .featured-label {
+  background-color: #212529;
+  width: clamp(150px, 55vw, 270px);
+  border-radius: 0 100px 100px 0;
 }
 
 main .featured-projects .projects .project .left {
@@ -193,6 +201,7 @@ main .featured-projects .projects .project .left p {
 
 main .featured-projects .projects .project .left ul {
   padding: 0;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,12 +210,13 @@ main .featured-projects .projects .project .left ul {
 }
 
 main .featured-projects .projects .project .left ul li {
-  font-size: 1rem;
+  margin: .5rem 1rem .5rem 0;
   padding: .2rem 1rem;
-  margin: .3rem .7rem;
   list-style: none;
   background-color: #212529;
   border-radius: 100px;
+  font-size: clamp(0.3rem, 4vw, 1.2rem);
+  text-align: center;
 }
 
 main .featured-projects .projects .project .right {
@@ -257,22 +267,64 @@ main .featured-projects .projects .dark-bg {
 
 main .career {
   background-color: #efefef;
+  padding-top: 1.5rem;
 }
 
-.section-text {
-  margin: 0;
-  padding: .5rem .5rem .5rem 1.7rem;
+main .career .career-label {
   background-color: #212529;
-  font-size: 1.65rem;
-  text-transform: uppercase;
+  width: clamp(150px, 40vw, 200px);
   border-radius: 0 100px 100px 0;
+  margin-bottom: 2.5rem;
 }
 
-img {
-  width: 70px;
+main .career .skills-logos {
+  padding: 0 3rem 3rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.contact-design {
+main .career .skills-logos .logo {
+  margin: 1rem;
+  width: clamp(50px, 20vw, 100px);
+}
+
+main .contact .contact-design {
   display: none;
+}
+
+main .contact h2 {
+  text-align: center;
+}
+
+main .contact .contact-form {
+  padding: 0 1.7rem;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #212529;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer h4 {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  margin: .6rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
+    //overflow: scroll;
     //border: 1px dotted red;
+    
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
@@ -22,11 +25,9 @@ body, html{
 }
 
 header{
-
     position: sticky;
     background-color: $blue-dark;
     width: 100%;
-    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,7 +45,7 @@ header{
             font-size: clamp(.5rem, 4vw, 1.4rem);
             text-decoration: none;
             color: $white;
-            padding: .2em 1.5vw;
+            padding: 0 1.5vw;
         }
     }
 }
@@ -54,14 +55,22 @@ header{
     font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
 }
 
+.section-text{
+    margin: 0;
+    font-size: clamp(1rem, 7vw, 2rem);
+    text-align: left;
+    text-transform: uppercase;
+    padding: 1rem $padding-sides;
+}
+
 main{
     margin: 0;
     padding: 0;
 
     .main-page{
+        
         //border: 1px solid green;
-        padding:  1.4rem $padding-sides 0 $padding-sides;
-        height: auto;
+        padding:  1.4rem $padding-sides 1.4rem $padding-sides;
 
         .main-left{
             display: inline-flex;
@@ -73,7 +82,7 @@ main{
             
             h1{
                 width: 50%;
-                font-size: clamp(2rem, 11.5vw, 3.5rem);
+                font-size: clamp(2rem, 11.5vw, 3.3rem);
                 margin: 0;
             }
         
@@ -101,6 +110,7 @@ main{
                 width: clamp(100px, 45vw, 200px);
 
                 p{
+                    height: auto;
                     font-size: clamp(1rem, 5vw, 1.5rem);
                     font-family: 'Poppins', sans-serif, Arial, sans-serif;
                     font-weight: 500;
@@ -116,7 +126,7 @@ main{
                 text-align: center;
 
                 p{
-                    font-size: clamp(1rem, 7vw, 2.5rem);
+                    font-size: clamp(1rem, 7vw, 2.2rem);
                     font-weight: 600;
                     text-transform: uppercase;
                     color: $pink;  
@@ -152,12 +162,11 @@ main{
     .featured-projects{
         //border: 1px solid green;
         background-color: $blue-light;
-        margin-top: 1rem;
-        
-        .featured{
-            width: clamp(200px, 35vw, 270px);
-            text-align: center;
-    
+        padding-top: 1.5rem;
+        .featured-label{
+            background-color: $blue-dark;
+            width: clamp(150px, 55vw, 270px);
+            border-radius: 0 100px 100px 0;
         }
 
         .projects{
@@ -179,19 +188,20 @@ main{
 
                     ul{
                         padding: 0;
+                        margin: 0;
                         display: flex;
                         flex-wrap: wrap;
 
                         li{
-                            font-size: 1rem;
+                            margin: .5rem 1rem .5rem 0;
                             padding: .2rem 1rem;
-                            margin: .3rem .7rem;
                             list-style: none;
                             background-color: $blue-dark;
                             border-radius: 100px;
+                            font-size: clamp(0.3rem, 4vw, 1.2rem);
+                            text-align: center;
                         }
                     }
-
                 }
 
                 .right{
@@ -237,22 +247,50 @@ main{
 
     .career{
         background-color: $white;
+        padding-top: 1.5rem;
+        .career-label{
+            background-color: $blue-dark;
+            width: clamp(150px, 40vw, 200px);
+            border-radius: 0 100px 100px 0;
+            margin-bottom: 2.5rem;
+        }
+        .skills-logos{
+            padding: 0 3rem 3rem 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .logo{
+                margin: 1rem;
+                width: clamp(50px, 20vw, 100px);
+            }
+        }
+    }
+
+    .contact{
+        .contact-design{
+            display: none;
+        }
+        h2{
+            text-align: center;
+        }
+        .contact-form{
+            padding: 0 $padding-sides;
+        }
     }
 }
 
-.section-text{
-    margin:0;
-    padding: .5rem .5rem .5rem 1.7rem;
+footer{
+    margin-top: 2rem;
+    padding: 1rem;
     background-color: $blue-dark;
-    font-size: 1.65rem;
-    text-transform: uppercase;
-    border-radius: 0 100px 100px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    h4{
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        margin: .6rem;
+    }
 }
 
-img{
-    width:70px;
-}
-
- .contact-design{
-    display: none;
-}
