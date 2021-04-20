@@ -8,14 +8,14 @@
 body, html {
   font-family: 'Poppins', sans-serif, Arial, sans-serif;
   color: #efefef;
-  background-color: #1b2a41;
+  background-color: #343a40;
   margin: 0;
 }
 
 header {
   position: -webkit-sticky;
   position: sticky;
-  background-color: #162233;
+  background-color: #212529;
   width: 100%;
   height: 5rem;
   display: -webkit-box;
@@ -32,19 +32,17 @@ header {
 }
 
 header h3 {
-  font-size: 1.3em;
+  font-size: clamp(1rem, 6vw, 2rem);
   margin-left: .7em;
   padding: .2em;
 }
 
 header nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-right: .7em;
 }
 
 header nav a {
+  font-size: clamp(0.5rem, 4vw, 1.4rem);
   text-decoration: none;
   color: #efefef;
   padding: .2em 1.5vw;
@@ -81,16 +79,15 @@ main .main-page .main-left .intro {
 }
 
 main .main-page .main-left h1 {
-  width: 30%;
-  font-size: 2.5rem;
+  width: 50%;
+  font-size: clamp(2rem, 11.5vw, 3.5rem);
   margin: 0;
 }
 
 main .main-page .main-left .description {
   line-height: 1.7rem;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 5vw, 1.5rem);
   font-weight: 300;
-  text-align: justify;
 }
 
 main .main-page .main-left .main-design {
@@ -98,15 +95,13 @@ main .main-page .main-left .main-design {
 }
 
 main .main-page .main-left .download-resume {
+  padding: 0 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #243856;
+  background-color: #495057;
   border-radius: 100px;
   border: none;
-  font-size: 5vw;
-  font-family: 'Poppins', sans-serif, Arial, sans-serif;
-  font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,11 +110,18 @@ main .main-page .main-left .download-resume {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   color: #efefef;
-  width: 45vw;
+  width: clamp(100px, 45vw, 200px);
+}
+
+main .main-page .main-left .download-resume p {
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  font-family: 'Poppins', sans-serif, Arial, sans-serif;
+  font-weight: 500;
+  margin: .8rem 0;
 }
 
 main .main-page .main-left .download-resume .download-icon {
-  width: 27%;
+  width: clamp(20px, 25%, 70px);
 }
 
 main .main-page .main-left .call-to-action {
@@ -127,7 +129,7 @@ main .main-page .main-left .call-to-action {
 }
 
 main .main-page .main-left .call-to-action p {
-  font-size: 7vw;
+  font-size: clamp(1rem, 7vw, 2.5rem);
   font-weight: 600;
   text-transform: uppercase;
   color: #ff8484;
@@ -160,39 +162,32 @@ main .main-page .main-right .socials {
 }
 
 main .main-page .main-right .socials .social-icon {
-  width: 13vw;
+  width: clamp(20px, 13vw, 70px);
 }
 
 main .featured-projects {
-  border: 1px solid green;
-  position: relative;
-  bottom: 4rem;
+  background-color: #495057;
+  margin-top: 1rem;
 }
 
 main .featured-projects .featured {
-  width: 50%;
-  min-width: 200px;
-  position: relative;
-  top: 4rem;
+  width: clamp(200px, 35vw, 270px);
+  text-align: center;
 }
 
-main .featured-projects .projects .light-bg {
-  background-color: #243856;
-}
-
-main .featured-projects .projects .project {
+main .featured-projects .projects .project .left {
   padding: 1rem 1.7rem;
   overflow-x: hidden;
 }
 
 main .featured-projects .projects .project .left h3 {
-  font-size: 2rem;
+  font-size: clamp(1rem, 8vw, 2.5rem);
 }
 
 main .featured-projects .projects .project .left p {
-  font-size: 1rem;
+  font-size: clamp(1rem, 4.5vw, 1.4rem);
   font-weight: 400;
-  line-height: 1.7rem;
+  line-height: 1.8rem;
   text-align: justify;
 }
 
@@ -201,9 +196,6 @@ main .featured-projects .projects .project .left ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -211,43 +203,66 @@ main .featured-projects .projects .project .left ul {
 main .featured-projects .projects .project .left ul li {
   font-size: 1rem;
   padding: .2rem 1rem;
-  margin: .3rem;
+  margin: .3rem .7rem;
   list-style: none;
-  background-color: #162233;
+  background-color: #212529;
   border-radius: 100px;
 }
 
+main .featured-projects .projects .project .right {
+  padding: 1rem 0;
+  overflow-x: hidden;
+}
+
 main .featured-projects .projects .project .right .project-sc {
+  position: relative;
+  left: 1.7rem;
   width: 100vw;
-  border-radius: 20px;
+  border-radius: 25px;
 }
 
 main .featured-projects .projects .project .right .view-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 40%;
-  height: 20vw;
-  background-color: #162233;
+  background-color: #212529;
+  float: right;
   border-radius: 100px 0 0 100px;
+  position: relative;
+  bottom: clamp(20px, 10vw, 60px);
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+main .featured-projects .projects .project .right .view-buttons a {
+  text-decoration: none;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  margin: clamp(0.5rem, 2vw, 1rem);
 }
 
 main .featured-projects .projects .project .right .view-buttons .icon {
   fill: #efefef;
-  width: 40px;
-  padding: .5rem;
+  width: clamp(20px, 13vw, 60px);
 }
 
-main .featured-projects .projects .first {
-  padding-top: 1.7rem;
+main .featured-projects .projects .project .right .view-buttons .globe {
+  padding-left: .6rem;
+}
+
+main .featured-projects .projects .dark-bg {
+  background-color: #343a40;
+}
+
+main .career {
+  background-color: #efefef;
 }
 
 .section-text {
-  padding: .5rem .5rem .5rem 1rem;
-  background-color: #162233;
+  margin: 0;
+  padding: .5rem .5rem .5rem 1.7rem;
+  background-color: #212529;
   font-size: 1.65rem;
   text-transform: uppercase;
   border-radius: 0 100px 100px 0;
