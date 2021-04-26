@@ -10,12 +10,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 $white: #efefef;
-$blue-light: #495057;
-$blue-mid: #343a40;
-$blue-dark: #212529;
+$blue-light: #324A5F;
+$blue-mid: #1B2A41;
+$blue-dark: #162233;
 $pink: #ff8484;
 
-$padding-sides: 1.7rem;
+
+$padding-sides: 2rem;
+
 
 $desktop: 800px;
 
@@ -25,17 +27,22 @@ $desktop: 800px;
     }
 }
 
+
+
 body, html{
     font-family: 'Poppins', sans-serif, Arial, sans-serif;
     color: $white;
-    background-color: $blue-mid;
+    background-color: $blue-light;
     margin: 0;
+
 }
 
 header{
     position: sticky;
+    z-index: 10;
     background-color: $blue-dark;
     width: 100%;
+    height: clamp(60px, 4.5vw, 100px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,51 +82,85 @@ main{
     margin: 0;
     padding: 0;
 
-    .main-page{
-        
-        //border: 1px solid green;
-        padding:  1.4rem $padding-sides 1.4rem $padding-sides;
 
+    .main-page{
+
+        //border: 1px solid green;
+        @include desktop{
+            display: grid;
+            grid-template-columns: 55vw 45vw;
+        }
         .main-left{
             display: inline-flex;
             flex-direction: column;
+            background-color: $blue-mid;
+            padding:  1.4rem $padding-sides 1.4rem $padding-sides;
+            @include desktop{
+                $padding-desk: clamp(2rem, 10vw, 13rem);
+                border-radius: 0 0 25px 0;
+                padding:  3rem $padding-desk;
+                //height: 92vh;
+                //min-height: 770px;
+            }
             .intro{
                 margin: 0;
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+                @include desktop{
+                    font-size: clamp(1.4rem, 2vw, 3rem);
+                }
             }
             
             h1{
                 width: 50%;
-                font-size: clamp(2rem, 11.5vw, 3.3rem);
+                font-size: clamp(3rem, 4vw, 4rem);
                 margin: 0;
+                @include desktop{
+                    //font-size: clamp(2rem, 5vw, 4rem);
+                }
             }
         
             .description{
                 line-height: 28px;
-                font-size: clamp(1rem, 5vw, 1.5rem);
+                font-size: clamp(1.1rem, 1.5vw, 1.5rem);
                 font-weight: 300;
+                @include desktop{
+                    //font-size: clamp(0.7rem, 4vw, 1rem);
+                }
 
             }
             
             .main-design{
+                .design{
+                    width: 200px;
+                }
+
                 display: none;
+
+                @include desktop{
+                    display: inline;
+                    position: absolute;
+                    right: calc(45vw - 127px);
+                    top: 60px;
+                    z-index: 0;
+                }
             }
 
             .download-resume{
+                cursor: pointer;
                 padding: 0 10px;
-                align-items: center;
+                margin: 1rem auto;
                 background-color: $blue-light;
+                color: $white;
                 border-radius: 100px;
                 border: none;
                 display: flex;
-                margin: 1rem auto;
+                align-items: center;
                 justify-content: space-evenly;
-                color: $white;
                 width: clamp(100px, 45vw, 200px);
 
                 p{
                     height: auto;
-                    font-size: clamp(1rem, 5vw, 1.5rem);
+                    font-size: clamp(1rem, 4vw, 1.5rem);
                     font-family: 'Poppins', sans-serif, Arial, sans-serif;
                     font-weight: 500;
                     margin: .8rem 0;
@@ -134,7 +175,7 @@ main{
                 text-align: center;
 
                 p{
-                    font-size: clamp(1rem, 7vw, 2.2rem);
+                    font-size: clamp(1.5rem, 4vw, 2.2rem);
                     font-weight: 600;
                     text-transform: uppercase;
                     color: $pink;  
@@ -153,15 +194,88 @@ main{
             position: absolute;
             right: 2rem;
 
+            @include desktop{
+                position: static;
+                background-color: $blue-light;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+            }
             .main-graphic{
                 display: none;
+                @include desktop{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 22rem;
+                    height: 200px;
+
+                    .layer-1{
+                        position: relative;
+                        z-index: 9;
+                        transition: transform 1s;
+                    }
+
+                    .layer-2{
+                        position: relative;
+                        bottom: 95px;
+                        z-index: 8;
+                        transition: transform 1s;
+                    }
+                    .layer-3{
+                        position: relative;
+                        bottom: 190px;
+                        z-index: 7;
+                        transition: transform 1s;
+                    }
+                    .layer-4{
+                        position: relative;
+                        bottom: 285px;
+                        z-index: 6;
+                        transition: transform 1s;
+                    }
+                }
+            }
+
+            .main-graphic:hover .layer-1{
+                transform: translateY(-70px);
+            }
+            .main-graphic:hover .layer-2{
+                transform: translateY(-60px);
+            }
+            .main-graphic:hover .layer-3{
+                transform: translateY(20px);
+            }
+            .main-graphic:hover .layer-4{
+                transform: translateY(100px);
             }
 
             .socials{
                 display: flex;
                 flex-direction: column;
+                margin-top: 20px;
+                @include desktop{
+                    margin-top: 80px;
+                    flex-direction: row;
+                    align-items: center;
+                    float: right;
+                    background-color: $blue-mid;
+                    border-radius: 100px 0 0 100px;
+                    align-self: end;
+                    align-self: flex-end;
+
+                }
                 .social-icon{
                     width: clamp(20px, 13vw, 70px);
+                    @include desktop{
+                        margin: 12px;
+                    }
+                }
+                .github{
+                    @include desktop{
+                        margin-left: 30px;
+                    }
                 }
             }
         }
@@ -170,7 +284,7 @@ main{
     .featured-projects{
         //border: 1px solid green;
         background-color: $blue-light;
-        padding-top: 1.5rem;
+        padding-top: 2.5rem;
         .featured-label{
             background-color: $blue-dark;
             width: clamp(150px, 55vw, 270px);
@@ -178,7 +292,12 @@ main{
         }
 
         .projects{
-            .project{   
+            .project{  
+                @include desktop{
+                    padding: 4rem 0 2rem 3rem;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                } 
                 .left{
                     padding: 1rem $padding-sides;
                     overflow-x: hidden;
@@ -220,6 +339,9 @@ main{
                         left: $padding-sides;
                         width: 100vw;
                         border-radius: 25px;
+                        @include desktop{
+                            width: 100%;
+                        }
                     }
                     .view-buttons{
                         background-color: $blue-dark;
@@ -277,6 +399,7 @@ main{
     }
 
     .contact{
+        background-color: $blue-mid;
         .contact-design{
             display: none;
         }
@@ -327,7 +450,7 @@ main{
                     color: $white;
                     background-color: $blue-dark;
                     font-size: clamp(1rem, 4vw, 1.4rem);
-                    font-weight: 500;
+                    font-weight: 600;
                     width: clamp(100px, 30vw, 170px);
                 }
             }

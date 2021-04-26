@@ -8,15 +8,17 @@
 body, html {
   font-family: 'Poppins', sans-serif, Arial, sans-serif;
   color: #efefef;
-  background-color: #343a40;
+  background-color: #324A5F;
   margin: 0;
 }
 
 header {
   position: -webkit-sticky;
   position: sticky;
-  background-color: #212529;
+  z-index: 10;
+  background-color: #162233;
   width: 100%;
+  height: clamp(60px, 4.5vw, 100px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,7 +59,7 @@ header nav a {
   font-size: clamp(1rem, 7vw, 2rem);
   text-align: left;
   text-transform: uppercase;
-  padding: 1rem 1.7rem;
+  padding: 1rem 2rem;
 }
 
 main {
@@ -65,8 +67,13 @@ main {
   padding: 0;
 }
 
-main .main-page {
-  padding: 1.4rem 1.7rem 1.4rem 1.7rem;
+@media only screen and (min-width: 800px) {
+  main .main-page {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 55vw 45vw;
+        grid-template-columns: 55vw 45vw;
+  }
 }
 
 main .main-page .main-left {
@@ -77,22 +84,37 @@ main .main-page .main-left {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #1B2A41;
+  padding: 1.4rem 2rem 1.4rem 2rem;
+}
+
+@media only screen and (min-width: 800px) {
+  main .main-page .main-left {
+    border-radius: 0 0 25px 0;
+    padding: 3rem clamp(2rem, 10vw, 13rem);
+  }
 }
 
 main .main-page .main-left .intro {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+}
+
+@media only screen and (min-width: 800px) {
+  main .main-page .main-left .intro {
+    font-size: clamp(1.4rem, 2vw, 3rem);
+  }
 }
 
 main .main-page .main-left h1 {
   width: 50%;
-  font-size: clamp(2rem, 11.5vw, 3.3rem);
+  font-size: clamp(3rem, 4vw, 4rem);
   margin: 0;
 }
 
 main .main-page .main-left .description {
   line-height: 28px;
-  font-size: clamp(1rem, 5vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
   font-weight: 300;
 }
 
@@ -100,28 +122,43 @@ main .main-page .main-left .main-design {
   display: none;
 }
 
+main .main-page .main-left .main-design .design {
+  width: 200px;
+}
+
+@media only screen and (min-width: 800px) {
+  main .main-page .main-left .main-design {
+    display: inline;
+    position: absolute;
+    right: calc(45vw - 127px);
+    top: 60px;
+    z-index: 0;
+  }
+}
+
 main .main-page .main-left .download-resume {
+  cursor: pointer;
   padding: 0 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #495057;
+  margin: 1rem auto;
+  background-color: #324A5F;
+  color: #efefef;
   border-radius: 100px;
   border: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 1rem auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  color: #efefef;
   width: clamp(100px, 45vw, 200px);
 }
 
 main .main-page .main-left .download-resume p {
   height: auto;
-  font-size: clamp(1rem, 5vw, 1.5rem);
+  font-size: clamp(1rem, 4vw, 1.5rem);
   font-family: 'Poppins', sans-serif, Arial, sans-serif;
   font-weight: 500;
   margin: .8rem 0;
@@ -136,7 +173,7 @@ main .main-page .main-left .call-to-action {
 }
 
 main .main-page .main-left .call-to-action p {
-  font-size: clamp(1rem, 7vw, 2.2rem);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 600;
   text-transform: uppercase;
   color: #ff8484;
@@ -154,8 +191,97 @@ main .main-page .main-right {
   right: 2rem;
 }
 
+@media only screen and (min-width: 800px) {
+  main .main-page .main-right {
+    position: static;
+    background-color: #324A5F;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 main .main-page .main-right .main-graphic {
   display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  main .main-page .main-right .main-graphic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 22rem;
+    height: 200px;
+  }
+  main .main-page .main-right .main-graphic .layer-1 {
+    position: relative;
+    z-index: 9;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+  }
+  main .main-page .main-right .main-graphic .layer-2 {
+    position: relative;
+    bottom: 95px;
+    z-index: 8;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+  }
+  main .main-page .main-right .main-graphic .layer-3 {
+    position: relative;
+    bottom: 190px;
+    z-index: 7;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+  }
+  main .main-page .main-right .main-graphic .layer-4 {
+    position: relative;
+    bottom: 285px;
+    z-index: 6;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+  }
+}
+
+main .main-page .main-right .main-graphic:hover .layer-1 {
+  -webkit-transform: translateY(-70px);
+          transform: translateY(-70px);
+}
+
+main .main-page .main-right .main-graphic:hover .layer-2 {
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+}
+
+main .main-page .main-right .main-graphic:hover .layer-3 {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+main .main-page .main-right .main-graphic:hover .layer-4 {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
 }
 
 main .main-page .main-right .socials {
@@ -166,25 +292,68 @@ main .main-page .main-right .socials {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 800px) {
+  main .main-page .main-right .socials {
+    margin-top: 80px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    float: right;
+    background-color: #1B2A41;
+    border-radius: 100px 0 0 100px;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+    align-self: flex-end;
+  }
 }
 
 main .main-page .main-right .socials .social-icon {
   width: clamp(20px, 13vw, 70px);
 }
 
+@media only screen and (min-width: 800px) {
+  main .main-page .main-right .socials .social-icon {
+    margin: 12px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  main .main-page .main-right .socials .github {
+    margin-left: 30px;
+  }
+}
+
 main .featured-projects {
-  background-color: #495057;
-  padding-top: 1.5rem;
+  background-color: #324A5F;
+  padding-top: 2.5rem;
 }
 
 main .featured-projects .featured-label {
-  background-color: #212529;
+  background-color: #162233;
   width: clamp(150px, 55vw, 270px);
   border-radius: 0 100px 100px 0;
 }
 
+@media only screen and (min-width: 800px) {
+  main .featured-projects .projects .project {
+    padding: 4rem 0 2rem 3rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 main .featured-projects .projects .project .left {
-  padding: 1rem 1.7rem;
+  padding: 1rem 2rem;
   overflow-x: hidden;
 }
 
@@ -213,7 +382,7 @@ main .featured-projects .projects .project .left ul li {
   margin: .5rem 1rem .5rem 0;
   padding: .2rem 1rem;
   list-style: none;
-  background-color: #212529;
+  background-color: #162233;
   border-radius: 100px;
   font-size: clamp(0.3rem, 4vw, 1.2rem);
   text-align: center;
@@ -226,13 +395,19 @@ main .featured-projects .projects .project .right {
 
 main .featured-projects .projects .project .right .project-sc {
   position: relative;
-  left: 1.7rem;
+  left: 2rem;
   width: 100vw;
   border-radius: 25px;
 }
 
+@media only screen and (min-width: 800px) {
+  main .featured-projects .projects .project .right .project-sc {
+    width: 100%;
+  }
+}
+
 main .featured-projects .projects .project .right .view-buttons {
-  background-color: #212529;
+  background-color: #162233;
   float: right;
   border-radius: 100px 0 0 100px;
   position: relative;
@@ -262,7 +437,7 @@ main .featured-projects .projects .project .right .view-buttons .globe {
 }
 
 main .featured-projects .projects .dark-bg {
-  background-color: #343a40;
+  background-color: #1B2A41;
 }
 
 main .career {
@@ -271,7 +446,7 @@ main .career {
 }
 
 main .career .career-label {
-  background-color: #212529;
+  background-color: #162233;
   width: clamp(150px, 40vw, 200px);
   border-radius: 0 100px 100px 0;
   margin-bottom: 2.5rem;
@@ -295,6 +470,10 @@ main .career .skills-logos {
 main .career .skills-logos .logo {
   margin: 1rem;
   width: clamp(50px, 20vw, 100px);
+}
+
+main .contact {
+  background-color: #1B2A41;
 }
 
 main .contact .contact-design {
@@ -379,16 +558,16 @@ main .contact .contact-form form .input::placeholder {
 main .contact .contact-form form .submit {
   margin: 0 auto;
   color: #efefef;
-  background-color: #212529;
+  background-color: #162233;
   font-size: clamp(1rem, 4vw, 1.4rem);
-  font-weight: 500;
+  font-weight: 600;
   width: clamp(100px, 30vw, 170px);
 }
 
 footer {
   margin-top: 2rem;
   padding: 1rem;
-  background-color: #212529;
+  background-color: #162233;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
