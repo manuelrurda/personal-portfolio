@@ -294,7 +294,7 @@ main{
         .projects{
             .project{  
                 @include desktop{
-                    padding: 4rem 0 2rem 3rem;
+                    padding: 0 0 0 3rem;
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                 } 
@@ -332,6 +332,9 @@ main{
                 }
 
                 .right{
+                    @include desktop{
+                        align-self: center;
+                    } 
                     padding: 1rem 0;
                     overflow-x: hidden;
                     .project-sc{
@@ -341,6 +344,7 @@ main{
                         border-radius: 25px;
                         @include desktop{
                             width: 100%;
+                            min-width: 500px;
                         }
                     }
                     .view-buttons{
@@ -369,6 +373,17 @@ main{
                     }
                 }
             }
+            .first{
+                background-color: $blue-mid;
+                position: relative;
+                top: 1rem;
+            }
+            .light{
+                fill: $blue-light;
+            }
+            .dark{
+                fill: $blue-mid;
+            }
             .dark-bg{
                 background-color: $blue-mid;
             }
@@ -378,11 +393,15 @@ main{
     .career{
         background-color: $white;
         padding-top: 1.5rem;
+        margin-top: 4rem;
         .career-label{
             background-color: $blue-dark;
             width: clamp(150px, 40vw, 200px);
             border-radius: 0 100px 100px 0;
             margin-bottom: 2.5rem;
+            .section-text{
+                font-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
         }
         .skills-logos{
             padding: 0 3rem 3rem 3rem;
@@ -407,6 +426,8 @@ main{
             text-align: center;
             text-transform: uppercase;
             font-size: clamp(1rem, 7vw, 2rem);
+            margin: 0;
+            padding: 2rem 0;
         }
         .contact-form{
             display: flex;
@@ -446,10 +467,11 @@ main{
                 }
     
                 .submit{
-                    margin: 0 auto;
+                    cursor: pointer;
+                    margin: 0 auto 3rem auto;
                     color: $white;
                     background-color: $blue-dark;
-                    font-size: clamp(1rem, 4vw, 1.4rem);
+                    font-size: clamp(1rem, 4vw, 1.7rem);
                     font-weight: 600;
                     width: clamp(100px, 30vw, 170px);
                 }
@@ -459,7 +481,6 @@ main{
 }
 
 footer{
-    margin-top: 2rem;
     padding: 1rem;
     background-color: $blue-dark;
     text-align: center;

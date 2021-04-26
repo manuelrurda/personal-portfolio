@@ -344,7 +344,7 @@ main .featured-projects .featured-label {
 
 @media only screen and (min-width: 800px) {
   main .featured-projects .projects .project {
-    padding: 4rem 0 2rem 3rem;
+    padding: 0 0 0 3rem;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -393,6 +393,14 @@ main .featured-projects .projects .project .right {
   overflow-x: hidden;
 }
 
+@media only screen and (min-width: 800px) {
+  main .featured-projects .projects .project .right {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 main .featured-projects .projects .project .right .project-sc {
   position: relative;
   left: 2rem;
@@ -403,6 +411,7 @@ main .featured-projects .projects .project .right .project-sc {
 @media only screen and (min-width: 800px) {
   main .featured-projects .projects .project .right .project-sc {
     width: 100%;
+    min-width: 500px;
   }
 }
 
@@ -436,6 +445,20 @@ main .featured-projects .projects .project .right .view-buttons .globe {
   padding-left: .6rem;
 }
 
+main .featured-projects .projects .first {
+  background-color: #1B2A41;
+  position: relative;
+  top: 1rem;
+}
+
+main .featured-projects .projects .light {
+  fill: #324A5F;
+}
+
+main .featured-projects .projects .dark {
+  fill: #1B2A41;
+}
+
 main .featured-projects .projects .dark-bg {
   background-color: #1B2A41;
 }
@@ -443,6 +466,7 @@ main .featured-projects .projects .dark-bg {
 main .career {
   background-color: #efefef;
   padding-top: 1.5rem;
+  margin-top: 4rem;
 }
 
 main .career .career-label {
@@ -450,6 +474,10 @@ main .career .career-label {
   width: clamp(150px, 40vw, 200px);
   border-radius: 0 100px 100px 0;
   margin-bottom: 2.5rem;
+}
+
+main .career .career-label .section-text {
+  font-size: clamp(1.5rem, 7vw, 2.5rem);
 }
 
 main .career .skills-logos {
@@ -484,6 +512,8 @@ main .contact h2 {
   text-align: center;
   text-transform: uppercase;
   font-size: clamp(1rem, 7vw, 2rem);
+  margin: 0;
+  padding: 2rem 0;
 }
 
 main .contact .contact-form {
@@ -556,16 +586,16 @@ main .contact .contact-form form .input::placeholder {
 }
 
 main .contact .contact-form form .submit {
-  margin: 0 auto;
+  cursor: pointer;
+  margin: 0 auto 3rem auto;
   color: #efefef;
   background-color: #162233;
-  font-size: clamp(1rem, 4vw, 1.4rem);
+  font-size: clamp(1rem, 4vw, 1.7rem);
   font-weight: 600;
   width: clamp(100px, 30vw, 170px);
 }
 
 footer {
-  margin-top: 2rem;
   padding: 1rem;
   background-color: #162233;
   text-align: center;
