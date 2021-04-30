@@ -29,6 +29,6 @@ This website is not hosted yet. Development has stopped until enough projects ar
 
 
 #
-Manuel Roddriguez Urdapilleta
+Manuel Rodriguez Urdapilleta
 <p>30/04/2021</p>
 
