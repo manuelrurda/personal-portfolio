@@ -9,7 +9,7 @@ This is my first fully responsive personal developer portfolio.
 - CSS/SASS
 
 ## What did I learn?
-- Better file managment.
+- Better file management.
 - Syntax and functionality of SASS extension language.
 - Animation inside css using the `transform` and `animate` properties.
 - Vector graphics and `<svg>` implementation in HTML.
